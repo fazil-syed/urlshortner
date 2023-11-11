@@ -12,7 +12,7 @@ app.use(cors());
 const PORT = process.env.port || 5000;
 
 //for testing
-// app.use("/", (request, response) => response.send("hello"));
+app.use("/", (request, response) => response.send("hello"));
 
 //route for generating short url
 app.use("/api/genurl", require("./routes/genUrl"));
