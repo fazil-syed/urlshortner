@@ -8,7 +8,7 @@ const Url = require("../models/Url");
 
 router.post("/", async (request, response) => {
   const { longUrl } = request.body;
-  const baseUrl = config.get("baseURI");
+  const baseUrl = process.env.BASEURI;
 
   if (!validUrl.isUri(baseUrl)) {
     response.status(401).json("Invalid Base URL");
