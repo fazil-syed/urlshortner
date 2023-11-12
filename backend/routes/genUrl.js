@@ -25,7 +25,6 @@ router.post("/", async (request, response) => {
         });
 
         await url.save();
-        console.log(url);
         response.json(url);
       }
     } catch (error) {
