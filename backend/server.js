@@ -20,3 +20,5 @@ app.use("/api/geturl", require("./routes/getUrl"));
 
 // Start Express
 app.listen(PORT, () => console.log(`Server Started at port ${PORT}`));
+
+export default app;
