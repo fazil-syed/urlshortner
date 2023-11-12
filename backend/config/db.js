@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const config = require("config");
 let dotenv = require("dotenv").config();
-const db = dotenv.parsed.MONGOURI;
+const db = process.env.MONGOURI;
 
 //Connect to DB
 const connectDB = async () => {
