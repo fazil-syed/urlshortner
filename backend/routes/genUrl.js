@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const validUrl = require("valid-url");
-const config = require("config");
 const shortid = require("shortid");
 
 const Url = require("../models/Url");
@@ -10,9 +9,6 @@ router.post("/", async (request, response) => {
   const { longUrl } = request.body;
   const baseUrl = process.env.BASEURI;
 
-  if (!validUrl.isUri(baseUrl)) {
-    response.status(401).json("Invalid Base URL");
-  }
   const urlCode = shortid.generate();
   if (validUrl.isUri(longUrl)) {
     try {
